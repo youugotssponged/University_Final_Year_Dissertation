@@ -27,7 +27,6 @@ These Utilities / Libraries can be found within the Unity Package Manager.
 - Mono Cecil - preview version 0.1.6
 - Performance Testing API - preview version 1.3.3
 - Unity Physics - preview 0.2.5
-- ProBuilder - 4.2.3
-- Progrids - preview 3.0.3
+
   
   

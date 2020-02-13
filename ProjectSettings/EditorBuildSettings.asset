@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MENUS/Start Menu/Start Menu.unity
+    guid: 50e43f3503ab61948aeab8695854a505
+  - enabled: 1
+    path: Assets/Scenes/Unoptimised/UNOPTIMISED.unity
+    guid: b9b2b4616ab61fe48a9743f87c06ed0e
+  - enabled: 1
+    path: Assets/Scenes/Traditional/TRADITIONAL.unity
+    guid: 1a601e01281348342afd7ce2f5d64c19
+  - enabled: 1
+    path: Assets/Scenes/ECS Only/ECS_ONLY.unity
+    guid: faf140870ec610b43a4136c6c2bcb280
+  - enabled: 1
+    path: Assets/Scenes/ECS with Job System/ECS_WITH_JOBS.unity
+    guid: 16c949fbb9378fa4bb2b9b5f7cd88a01
   m_configObjects: {}
