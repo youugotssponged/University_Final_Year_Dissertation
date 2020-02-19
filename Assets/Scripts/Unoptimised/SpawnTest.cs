@@ -12,6 +12,7 @@ public class SpawnTest : MonoBehaviour
     public int ballSize = 2; // Number of balls to spawn
     public float xbound = 5.0f; // Default spread
     public float zbound = 5.0f; // Default spread
+    public float ybound = 1.0f;
 
     // Brute Forced, takes a while @ 10,000 balls => 27FPS~
     private void Start() {
@@ -21,7 +22,7 @@ public class SpawnTest : MonoBehaviour
                 new Vector3
                 (
                     this.transform.position.x + xbound, 
-                    this.transform.position.y, 
+                    this.transform.position.y + ybound, 
                     this.transform.position.z + zbound
                 ); 
 
@@ -32,9 +33,9 @@ public class SpawnTest : MonoBehaviour
             // with each other at the same time in the same 
             // position is bad RIP
             
-            xbound += 1.3f; // Increase Spread
-            zbound += -0.7f; // Increase Spread
-
+            //xbound += 1.3f; // Increase Spread
+            //zbound += -0.7f; // Increase Spread
+            ybound += 0.5f;
             //Debug.Log("BALL CREATED: " + (i + 1));
         }
 
