@@ -12,6 +12,11 @@ public class StartMenuHandler : MonoBehaviour
 {   
     // Seperate Event Handlers for use within the Buttons OnClick event
     // each 
+
+    private void Start(){
+        Time.timeScale = 1f;
+    }
+
     public void LoadUnoptimisedTest(){
         int currentScene = (int) SceneList.START_MENU;
         SceneManager.LoadScene(currentScene + (int)SceneList.UNOPTIMISED);
