@@ -9,6 +9,10 @@ This Project will contain various prototypes both using Traditional Methods of O
 
 These Prototypes will be profiled, tested and compared with each other.
 
+The Prototypes will contain the same test features such as
+- Same amount of Objects within the scenes.
+- Same scene setup and physics test: etc.
+
 ## Unity Version Used For This Project
 - Unity 2019.3.0f6
 
