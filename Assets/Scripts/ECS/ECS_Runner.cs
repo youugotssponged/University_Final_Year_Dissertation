@@ -14,12 +14,12 @@ using Unity.Rendering;
 public class ECS_Runner : MonoBehaviour
 {
     // Data Related
-    public static int numOfEntities = 1; // Change to static later
+    public static int numOfEntities = 1;
     [SerializeField] private Mesh mesh = null;
     [SerializeField] private Material material = null;
 
     // Control Related
-    public static bool shouldRestart = false; // Change to static for UI 
+    public static bool shouldRestart = false;
 
     // Entity Related
     public static EntityManager entityManager; // To store the entity manager that is currently within the scene

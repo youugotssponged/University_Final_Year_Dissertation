@@ -1,4 +1,11 @@
-﻿using UnityEngine;
+﻿/**
+* Student ID: 23571144
+* Name: Jordan McCann
+* File: PauseMenuHandlerForUnoptimised.cs
+* Purpose: To handle the pause menu from the Unoptimised prototype context
+*/
+
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;

@@ -1,4 +1,11 @@
-﻿using System;
+﻿/**
+* Student ID: 23571144
+* Name: Jordan McCann
+* File: PauseMenuHandlerForECSScene.cs
+* Purpose: To handle the pause menu from the ECS ONLY prototype context
+*/
+
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
