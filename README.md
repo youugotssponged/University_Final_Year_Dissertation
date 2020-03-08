@@ -24,5 +24,19 @@ These Utilities / Libraries can be found within the Unity Package Manager.
 - Performance Testing API - preview version 1.3.3
 - Unity Physics - preview 0.2.5
 
-  
-  
+
+# Current Build Progress 2 / 4
+- [x] Unoptimised Prototype
+- [ ] Traditional Prototype
+- [x] ECS Only Prototype
+- [ ] ECS WITH JOBS Prototype
+
+
+# Current Research Progress
+- [X] Survey Sent And Recieved Feedback (99 Responses)
+- [ ] Survey Analysed 
+- [ ] Email Interviews Sent
+- [ ] Email Interviews Analysed
+- [ ] Focus Group Completed
+- [ ] Focus Group Analysed
+- [ ] Profiling and Recording of Performances
