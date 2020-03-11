@@ -25,15 +25,15 @@ These Utilities / Libraries can be found within the Unity Package Manager.
 - Unity Physics - preview 0.2.5
 
 
-# Current Build Progress 2 / 4
+# Current Build Progress (4 / 4): Completed
 - [x] Unoptimised Prototype
-- [ ] Traditional Prototype
+- [x] Traditional Prototype
 - [x] ECS Only Prototype
-- [ ] ECS WITH JOBS Prototype
+- [x] ECS WITH JOBS Prototype
 
 
 # Current Research Progress
-- [X] Survey Sent And Recieved Feedback (99 Responses)
+- [X] Survey Sent And Recieved Feedback (101 Responses)
 - [ ] Survey Analysed 
 - [ ] Email Interviews Sent
 - [ ] Email Interviews Analysed
