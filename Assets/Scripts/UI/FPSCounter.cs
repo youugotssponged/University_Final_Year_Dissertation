@@ -23,7 +23,7 @@ public class FPSCounter : MonoBehaviour
         fpsText.text = ""; // Empty UI text
 
         // Check to see what prototype is currently loaded
-        // And Set ballsize based on what's currently being spawned 
+        // And Set ballsize based on what's currently being spawned
         switch (SceneManager.GetActiveScene().buildIndex)
         {
             case (int) SceneList.ECS_ONLY:
@@ -33,7 +33,7 @@ public class FPSCounter : MonoBehaviour
                 ballSize = ECSJOBS_Runner.numOfEntities;
                 break;
             case (int)SceneList.TRADITIONAL:
-                ballSize = BallSpawner.BallSize;
+                ballSize = ObjectPooler.Instance.pools[0].size;
                 break;
             case (int)SceneList.UNOPTIMISED:
                 ballSize = SpawnTestUnoptimised.ballSize;
@@ -42,7 +42,6 @@ public class FPSCounter : MonoBehaviour
                 ballSize = 0;
                 break;
         }
-
     }
     void Update()
     {

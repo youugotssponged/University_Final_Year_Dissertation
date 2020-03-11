@@ -4,13 +4,10 @@ using UnityEngine;
 public class BallSpawner : MonoBehaviour
 {
     ObjectPooler objectPooler;
-    public static int BallSize;
-    public GameObject BouncyBall;
 
-    private void Awake()
+    private void Start()
     {
         objectPooler = ObjectPooler.Instance;
-        BallSize = objectPooler.pools[0].size;
     }
 
     private void FixedUpdate()
