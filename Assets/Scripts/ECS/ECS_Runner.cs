@@ -14,7 +14,7 @@ using Unity.Rendering;
 public class ECS_Runner : MonoBehaviour
 {
     // Data Related
-    public static int numOfEntities = 1;
+    public static int numOfEntities = 10;
     [SerializeField] private Mesh mesh = null;
     [SerializeField] private Material material = null;
 
