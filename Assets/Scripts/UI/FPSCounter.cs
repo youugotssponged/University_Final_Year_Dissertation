@@ -30,10 +30,10 @@ public class FPSCounter : MonoBehaviour
                 ballSize = ECS_Runner.numOfEntities;
                 break;
             case (int)SceneList.ECS_WITH_JOBS:
-                // TODO: ADD ONCE COMPLETED
+                ballSize = ECSJOBS_Runner.numOfEntities;
                 break;
             case (int)SceneList.TRADITIONAL:
-                // TODO: ADD ONCE COMPLETED
+                ballSize = BallSpawner.BallSize;
                 break;
             case (int)SceneList.UNOPTIMISED:
                 ballSize = SpawnTestUnoptimised.ballSize;

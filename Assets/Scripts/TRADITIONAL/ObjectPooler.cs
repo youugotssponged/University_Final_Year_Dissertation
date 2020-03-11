@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿// BRACKEYS CODE, REFERENCE AND LEAVE A LINK
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,20 +10,16 @@ public class ObjectPooler : MonoBehaviour
         public string tag;
         public GameObject prefab;
         public int size;
-
     }
 
     public static ObjectPooler Instance;
+    public List<Pool> pools;
+    public Dictionary<string, Queue<GameObject>> poolDictionary;
 
     private void Awake()
     {
         Instance = this;
     }
-
-    public List<Pool> pools;
-
-    public Dictionary<string, Queue<GameObject>> poolDictionary;
-
 
     private void Start()
     {
@@ -39,7 +35,6 @@ public class ObjectPooler : MonoBehaviour
                 obj.SetActive(false);
                 objectPool.Enqueue(obj);
             }
-
 
             poolDictionary.Add(pool.tag, objectPool);
         }

@@ -1,18 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿// REFERENCE BRACKEYS
 using UnityEngine;
 
 public class BallSpawner : MonoBehaviour
 {
     ObjectPooler objectPooler;
+    public static int BallSize;
+    public GameObject BouncyBall;
 
-    private void Start()
+    private void Awake()
     {
         objectPooler = ObjectPooler.Instance;
+        BallSize = objectPooler.pools[0].size;
     }
 
     private void FixedUpdate()
     {
         objectPooler.SpawnFromPool("Ball", transform.position, Quaternion.identity);
     }
+
 }
