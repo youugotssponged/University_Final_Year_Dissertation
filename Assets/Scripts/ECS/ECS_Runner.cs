@@ -39,6 +39,11 @@ public class ECS_Runner : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        CleanUp();
+    }
+
     public void StartSimulation()
     {
         shouldRestart = false; // No Longer Restarting
@@ -103,7 +108,4 @@ public class ECS_Runner : MonoBehaviour
         CleanUp();
         StartSimulation();
     }
-
-    // TODO: ISSUE CLEANUP IF USER CLOSES THE WINDOW
-
 }

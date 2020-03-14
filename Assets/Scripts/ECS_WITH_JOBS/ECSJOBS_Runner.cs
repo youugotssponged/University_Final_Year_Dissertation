@@ -40,6 +40,11 @@ public class ECSJOBS_Runner : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        CleanUp();
+    }
+
     private void StartSimulation()
     {
         shouldRestart = false; // No Longer Restarting
@@ -86,9 +91,11 @@ public class ECSJOBS_Runner : MonoBehaviour
                 mesh = mesh,
                 material = material
             });
+            
         }
 
-        ECSJOBS_MoveSystem.Complete();
+        
+        //ECSJOBS_MoveSystem.Complete();
     }
 
     public static void CleanUp()

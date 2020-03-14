@@ -24,9 +24,31 @@ public class FPSCounter : MonoBehaviour
 
         // Check to see what prototype is currently loaded
         // And Set ballsize based on what's currently being spawned
+
+        CheckBallAmountOnScreen();
+
+        //if(Scene.Manager)
+
+    }
+    void Update()
+    {
+        CheckBallAmountOnScreen();
+        CalcFPS();
+    }
+
+    private void CalcFPS()
+    {
+        dTime += (Time.unscaledDeltaTime - dTime) * 0.1f; // Get the difference in timing between frames
+        fps = 1.0f / dTime;
+        msec = dTime * 1000.0f;
+        fpsText.text = "Number of balls: " + ballSize + " @ " + string.Format("{0:0.0} ms ({1:0.} fps)", msec, fps);
+    }
+
+    private void CheckBallAmountOnScreen()
+    {
         switch (SceneManager.GetActiveScene().buildIndex)
         {
-            case (int) SceneList.ECS_ONLY:
+            case (int)SceneList.ECS_ONLY:
                 ballSize = ECS_Runner.numOfEntities;
                 break;
             case (int)SceneList.ECS_WITH_JOBS:
@@ -42,12 +64,5 @@ public class FPSCounter : MonoBehaviour
                 ballSize = 0;
                 break;
         }
-    }
-    void Update()
-    {
-        dTime += (Time.unscaledDeltaTime - dTime) * 0.1f; // Get the difference in timing between frames
-        fps = 1.0f / dTime; 
-        msec = dTime * 1000.0f; 
-        fpsText.text = "Number of balls: " + ballSize + " @ " + string.Format("{0:0.0} ms ({1:0.} fps)", msec, fps);
     }
 }
