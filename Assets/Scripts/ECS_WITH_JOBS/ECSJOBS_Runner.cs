@@ -3,6 +3,9 @@
 * Name: Jordan McCann
 * File: ECSJOBS_Runner.cs
 * Purpose: To Run The ECS WITH JOBS Prototype with internal handler functions to allow the user to quickly reset the test 
+
+Note: This Script is Unchanged from the Original ECS Runner as this purely is the authoring component 
+      just to create the entities via the Entity Manager
 */
 using UnityEngine;
 using Unity.Entities;
@@ -70,7 +73,6 @@ public class ECSJOBS_Runner : MonoBehaviour
             // Move Component
             entityManager.SetComponentData(entity, new ECSJOBS_MoveComponent
             {
-                // TODO: ALLOW USER TO SET SPEED
                 movementSpeed = UnityEngine.Random.Range(1f, 10f),
                 time = Time.deltaTime
             });
@@ -78,7 +80,6 @@ public class ECSJOBS_Runner : MonoBehaviour
             // Translation Component
             entityManager.SetComponentData(entity, new Translation
             {
-                // TODO: ALLOW USER TO SET SPREAD
                 Value = new float3(
                     UnityEngine.Random.Range(-5f, 5f),
                     UnityEngine.Random.Range(-30f, 30f), 0
@@ -93,9 +94,6 @@ public class ECSJOBS_Runner : MonoBehaviour
             });
             
         }
-
-        
-        //ECSJOBS_MoveSystem.Complete();
     }
 
     public static void CleanUp()

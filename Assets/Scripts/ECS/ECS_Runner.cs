@@ -14,9 +14,9 @@ using Unity.Rendering;
 public class ECS_Runner : MonoBehaviour
 {
     // Data Related
-    public static int numOfEntities = 10;
-    [SerializeField] private Mesh mesh = null;
-    [SerializeField] private Material material = null;
+    public static int numOfEntities = 10; // Number of Entities to be Instantiated
+    [SerializeField] private Mesh mesh = null; // Mesh to be assigned
+    [SerializeField] private Material material = null; // Material to be assigned
 
     // Control Related
     public static bool shouldRestart = false;
@@ -39,6 +39,7 @@ public class ECS_Runner : MonoBehaviour
         }
     }
 
+    // Upon this monobehavior / Script being destroyed, enforce the cleanup process
     private void OnDestroy()
     {
         CleanUp();
@@ -51,10 +52,10 @@ public class ECS_Runner : MonoBehaviour
         entityManager = World.DefaultGameObjectInjectionWorld.EntityManager; // Set the Entity Manager
 
         entityArchetype = entityManager.CreateArchetype( // Set the structure of the entity
-            typeof(ECS_MoveComponent),
-            typeof(Translation),
-            typeof(LocalToWorld),
-            typeof(RenderMesh)
+            typeof(ECS_MoveComponent), // The move component
+            typeof(Translation), // The Translation component
+            typeof(LocalToWorld), // Used to position the entities from local to world space
+            typeof(RenderMesh) // The Render Mesh to make the entity visible
         );
 
         // Create and allocate the NativeArray and set it to be persistent so it doesn't empty by the end of this scope
@@ -73,22 +74,23 @@ public class ECS_Runner : MonoBehaviour
             // Move Component
             entityManager.SetComponentData(entity, new ECS_MoveComponent
             {
-                // TODO: ALLOW USER TO SET SPEED
-                movementSpeed = UnityEngine.Random.Range(1f, 10f),
-                time = Time.deltaTime
+                movementSpeed = UnityEngine.Random.Range(1f, 10f), // Random Speed between 1-10
+                time = Time.deltaTime // deltaTime assigned 
             });
 
             // Translation Component
             entityManager.SetComponentData(entity, new Translation
             {
-                // TODO: ALLOW USER TO SET SPREAD
                 Value = new float3(
-                    UnityEngine.Random.Range(-5f, 5f),
-                    UnityEngine.Random.Range(-30f, 30f), 0
+                    UnityEngine.Random.Range(-5f, 5f), // Random X
+                    UnityEngine.Random.Range(-30f, 30f), // Random Y 
+                    0 // Z = 0
                 )
             });
 
             // Set Render Mesh
+            // SetSharedComponentData is used to set the same shared data values 
+            // into the same chunk in memory as all of the intantiated balls will use the same mesh and material 
             entityManager.SetSharedComponentData(entity, new RenderMesh
             {
                 mesh = mesh,
@@ -105,7 +107,7 @@ public class ECS_Runner : MonoBehaviour
 
     // Used to restart the simulation
     public void RestartSimulation() {
-        CleanUp();
-        StartSimulation();
+        CleanUp(); // Enforce CleanUp
+        StartSimulation(); // Invoke StartSimulation Again
     }
 }

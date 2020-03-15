@@ -1,6 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿/**
+* Student ID: 23571144
+* Name: Jordan McCann
+* File: MouseLook.cs
+* Purpose: To Allow Camera Movement around within the scene
+
+NOTE: This Script is UNMODIFIED and is Purely used to Incorperate First Person Camera Movement,
+    This Script is Not Mine, please see further comments below on information about the author
+    jiankaiwang.
+*/
 
 /* 
  * author : jiankaiwang
@@ -9,6 +16,10 @@ using UnityEngine;
  * platform : Unity
  * date : 2017/12
  */
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {

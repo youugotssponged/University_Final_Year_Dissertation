@@ -1,18 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿/**
+* Student ID: 23571144
+* Name: Jordan McCann
+* File: FPSCONTROLLER.cs
+* Purpose: To Allow Movement around within the scene
 
+NOTE: This Script is UNMODIFIED and is Purely used to Incorperate First Person Movement,
+    This Script is Not Mine, please see further comments below on information about the author
+    jiankaiwang.
+*/
 
 /* 
  * author : jiankaiwang
  * description : The script provides you with basic operations of first personal control.
  * platform : Unity
  * date : 2017/12
+    (https://github.com/jiankaiwang/FirstPersonController)
  */
 
-/// <summary>
-/// ////////////////////////////////https://github.com/jiankaiwang/FirstPersonController
-/// </summary>
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
 public class FPSCONTROLLER : MonoBehaviour
 {
     public float speed = 10.0f;
