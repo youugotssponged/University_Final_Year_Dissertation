@@ -53,20 +53,10 @@ public class PauseMenuHandlerForTraditional : MonoBehaviour
         PauseUI.enabled = false;
     }
 
-    //public void Restart()
-    //{
-    //    // Call and pass in data from text entry
-    //    int numberofballs = Convert.ToInt32(inpfield.text);
-    //    Resume();
-    //    // Pass to class
-    //    ObjectPooler.Instance.pools[0].size = numberofballs;
-    //    inpfield.text = "";
-    //    SceneManager.LoadScene((int)SceneList.TRADITIONAL);
-    //}
-
+    // Handles return to main menu button being clicked
     public void ReturnToMainMenu()
     {
-        ObjectPooler.Instance.pools.Clear();
-        SceneManager.LoadScene((int)SceneList.START_MENU);
+        ObjectPooler.Instance.pools.Clear(); // Cleanup operation
+        SceneManager.LoadScene((int)SceneList.START_MENU); // Go back to Start Menu
     }
 }

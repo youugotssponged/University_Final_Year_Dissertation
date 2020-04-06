@@ -65,19 +65,19 @@ public class PauseMenuHandlerForECSScene : MonoBehaviour
         // Call and pass in data from text entry
         int numberofballs = Convert.ToInt32(inpfield.text);
 
-        Resume();
+        Resume(); // Resume Application
 
         // Pass to class
         ECS_Runner.numOfEntities = numberofballs;
-        ECS_Runner.shouldRestart = true;
-        inpfield.text = "";
-        ECS_Runner.CleanUp();
-        SceneManager.LoadScene((int)SceneList.ECS_ONLY);
+        ECS_Runner.shouldRestart = true; // Toggle Restart operation
+        inpfield.text = ""; // Clear inputfield 
+        ECS_Runner.CleanUp(); // Run Cleanup operation
+        SceneManager.LoadScene((int)SceneList.ECS_ONLY); // Reload current scene
     }
 
     public void ReturnToMainMenu()
     {
-        ECS_Runner.CleanUp();
-        SceneManager.LoadScene((int)SceneList.START_MENU);
+        ECS_Runner.CleanUp(); // Run Cleanup operation
+        SceneManager.LoadScene((int)SceneList.START_MENU); // Load Start Menu
     }
 }

@@ -9,7 +9,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-// Reference Code Snippet
 public class FPSCounter : MonoBehaviour
 {
     public Text fpsText; // UI Text to be updated
@@ -24,11 +23,7 @@ public class FPSCounter : MonoBehaviour
 
         // Check to see what prototype is currently loaded
         // And Set ballsize based on what's currently being spawned
-
         CheckBallAmountOnScreen();
-
-        //if(Scene.Manager)
-
     }
     void Update()
     {
@@ -38,6 +33,12 @@ public class FPSCounter : MonoBehaviour
 
     private void CalcFPS()
     {
+        /*
+            The FPS Calculation code was taken and used from - 
+            Author: Dave Hapson
+            From: https://wiki.unity3d.com/index.php/FramesPerSecond 
+        */
+
         dTime += (Time.unscaledDeltaTime - dTime) * 0.1f; // Get the difference in timing between frames
         fps = 1.0f / dTime;
         msec = dTime * 1000.0f;

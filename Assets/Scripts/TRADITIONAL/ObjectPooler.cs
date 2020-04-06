@@ -1,63 +1,81 @@
-﻿// BRACKEYS CODE, REFERENCE AND LEAVE A LINK
+﻿/**
+* Student ID: 23571144
+* Name: Jordan McCann
+* File: ObjectPooler.cs
+* Purpose: To manage the spawning and hiding of a list of pooled objects
+*/
+
+/*
+    This code was created by following a tutorial from
+    Author: Brackeys
+    Found: https://www.youtube.com/watch?v=tdSmKaJvCoA&list=LLxY4Ccd2weOmHbRlQSdWQeQ&index=5&t=0s
+*/
+
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectPooler : MonoBehaviour
 {
+    // Serialised Data class for describing what a pool is
     [System.Serializable]
     public class Pool
     {
-        public string tag;
-        public GameObject prefab;
-        public int size;
+        public string tag; // Name of the pool
+        public GameObject prefab; // Type of object to be placed into the pool
+        public int size; // Size of the pool
     }
 
-    public static ObjectPooler Instance;
-    public List<Pool> pools;
-    public Dictionary<string, Queue<GameObject>> poolDictionary;
+    public static ObjectPooler Instance; // Singleton Instance as there should only be one ObjectPooler manager
+    public List<Pool> pools; // List of pools
+    public Dictionary<string, Queue<GameObject>> poolDictionary; // Dictionary of pools and their gameobjects
 
     private void Awake()
     {
-        Instance = this;
+        Instance = this; // Set the singleton reference to this instance only
     }
 
     private void Start()
     {
-        poolDictionary = new Dictionary<string, Queue<GameObject>>();
+        poolDictionary = new Dictionary<string, Queue<GameObject>>(); // Create the dictionary
         
+        // For every pool 
         foreach(Pool pool in pools)
         {
+            // Create a new Queue for the objects in the pool
             Queue<GameObject> objectPool = new Queue<GameObject>();
 
+            // For every object in the pool
             for(int i = 0; i < pool.size; i++)
             {
-                GameObject obj = Instantiate(pool.prefab);
-                obj.SetActive(false);
-                objectPool.Enqueue(obj);
+                GameObject obj = Instantiate(pool.prefab); // Spawn
+                obj.SetActive(false); // Hide
+                objectPool.Enqueue(obj); // Insert to the queue
             }
 
-            poolDictionary.Add(pool.tag, objectPool);
+            poolDictionary.Add(pool.tag, objectPool); // Add pool to the dictionary
         }
     }
 
+    // Function for spawning an object from a pool with a given position and rotation
     public GameObject SpawnFromPool(string tag, Vector3 position, Quaternion rotation)
     {
+        // If the pool Dictionary has a pool with the string tag
         if (poolDictionary.ContainsKey(tag))
         {
-            GameObject objToSpawn = poolDictionary[tag].Dequeue();
+            GameObject objToSpawn = poolDictionary[tag].Dequeue(); // Assign and dequeue object from the pool
 
-            objToSpawn.SetActive(true);
-            objToSpawn.transform.position = position;
-            objToSpawn.transform.rotation = rotation;
+            objToSpawn.SetActive(true); // Show object
+            objToSpawn.transform.position = position; // assign position
+            objToSpawn.transform.rotation = rotation; // assign rotation
 
-            poolDictionary[tag].Enqueue(objToSpawn);
+            poolDictionary[tag].Enqueue(objToSpawn); // Place back into the pool
 
-            return objToSpawn;
+            return objToSpawn; // Return object to be spawned
         }
         else
         {
-            Debug.LogWarning("Pool with tag " + tag + " does not exist");
-            return null;
+            Debug.LogWarning("Pool with tag " + tag + " does not exist"); // Debug Message
+            return null; // Return No Object
         }
     }
 }
