@@ -23,9 +23,13 @@ public class BallSpawner : MonoBehaviour
     }
 
     // Physics based update per frame
-    private void FixedUpdate()
-    {
-        objectPooler.SpawnFromPool("Ball", transform.position, Quaternion.identity); // Spawn a ball object from the allocated pool.
+    private void Update()
+    {   
+        // If the current amount is not the specificied amount to be spawned
+        if(ObjectPooler.currentBallAmmount != ObjectPooler.extern_ballSize) {
+            // Spawn a ball from the allocated pool
+            objectPooler.SpawnFromPool("Ball", transform.position, Quaternion.identity); // Spawn a ball object from the allocated pool.
+        }
     }
 
 }

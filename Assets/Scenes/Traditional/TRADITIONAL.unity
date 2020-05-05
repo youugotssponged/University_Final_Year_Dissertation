@@ -580,11 +580,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9dbf63f216e531408582a30661dadf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pools:
-  - tag: Ball
-    prefab: {fileID: 3364869033997713760, guid: 4290f56745e15b549bdb0154fea2e9cd,
-      type: 3}
-    size: 45000
+  pools: []
+  ballPrefab: {fileID: 3364869033997713760, guid: 4290f56745e15b549bdb0154fea2e9cd,
+    type: 3}
 --- !u!1001 &3122866932057296560
 PrefabInstance:
   m_ObjectHideFlags: 0

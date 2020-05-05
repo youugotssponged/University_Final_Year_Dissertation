@@ -45,6 +45,18 @@ public class PauseMenuHandlerForTraditional : MonoBehaviour
         PauseUI.enabled = true;
     }
 
+    public void Restart(){
+        // Call and pass in data from text entry
+        int numberofballs = Convert.ToInt32(inpfield.text);
+
+        Resume();
+
+        // Pass to class
+        ObjectPooler.extern_ballSize = numberofballs;
+        inpfield.text = "";
+        SceneManager.LoadScene((int) SceneList.TRADITIONAL);
+    }
+
     public void Resume()
     {
         Time.timeScale = 1.0f;

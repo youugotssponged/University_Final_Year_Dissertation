@@ -29,6 +29,10 @@ public class ObjectPooler : MonoBehaviour
     public List<Pool> pools; // List of pools
     public Dictionary<string, Queue<GameObject>> poolDictionary; // Dictionary of pools and their gameobjects
 
+    public static int currentBallAmmount = 0; // Current amount of balls being tracked
+
+    public GameObject ballPrefab; // Ball prefab to be assigned
+    public static int extern_ballSize = 10; // Amount of balls to be allocated - Defaulted to 10
     private void Awake()
     {
         Instance = this; // Set the singleton reference to this instance only
@@ -38,7 +42,14 @@ public class ObjectPooler : MonoBehaviour
     {
         poolDictionary = new Dictionary<string, Queue<GameObject>>(); // Create the dictionary
         
-        // For every pool 
+        // Manually Instantiate a Pool to be inserted into the pools List
+        Pool ballPool = new Pool();
+        ballPool.tag = "Ball"; // Pool labled as ball
+        ballPool.prefab = ballPrefab; // Assign the ball prefab
+        ballPool.size = extern_ballSize; // Assign the externally set size
+        pools.Add(ballPool); // Add to the list
+
+        // For every pool in the pools list => currently 1 => The ballPool
         foreach(Pool pool in pools)
         {
             // Create a new Queue for the objects in the pool
@@ -69,7 +80,7 @@ public class ObjectPooler : MonoBehaviour
             objToSpawn.transform.rotation = rotation; // assign rotation
 
             poolDictionary[tag].Enqueue(objToSpawn); // Place back into the pool
-
+            currentBallAmmount++;
             return objToSpawn; // Return object to be spawned
         }
         else
