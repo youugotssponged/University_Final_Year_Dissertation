@@ -31,5 +31,4 @@ public class BallSpawner : MonoBehaviour
             objectPooler.SpawnFromPool("Ball", transform.position, Quaternion.identity); // Spawn a ball object from the allocated pool.
         }
     }
-
 }
