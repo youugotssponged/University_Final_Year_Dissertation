@@ -61,6 +61,7 @@ public class PauseMenuHandlerForTraditional : MonoBehaviour
 
         // Pass to class
         ObjectPooler.extern_ballSize = numberofballs;
+        ObjectPooler.currentBallAmmount = 0;
         inpfield.text = "";
         SceneManager.LoadScene((int) SceneList.TRADITIONAL);
     }
