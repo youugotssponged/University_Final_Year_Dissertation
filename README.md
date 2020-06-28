@@ -34,12 +34,12 @@ These Utilities / Libraries can be found within the Unity Package Manager.
 
 # Current Research Progress
 - [x] Survey Sent And Recieved Feedback (101 Responses)
-- [ ] Survey Analysed 
+- [x] Survey Analysed 
 - [x] Email Interviews Sent
-- [ ] Email Interviews Analysed
+- [x] Email Interviews Analysed
 - [x] Focus Group Completed
 - [x] Focus Group Transcribed
-- [ ] Focus Group Analysed
-- [ ] Profiling and Recording of Performances
+- [x] Focus Group Analysed
+- [x] Profiling and Recording of Performances
 
 ------------------------------------------------------------------------
